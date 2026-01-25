@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dariya Tologonova | Portfolio</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background:#0b1d3f;
+  color:#fff;
+  line-height:1.7;
+}
+h1,h2,h3 { font-family:'Playfair Display', serif; }
+
+header {
+  position:sticky;
+  top:0;
+  background:#081530;
+  padding:20px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:100;
+}
+header h1 { font-size:26px; }
+
+nav button {
+  background:#fff;
+  color:#0b1d3f;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+section {
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s ease;
+}
+section.active {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Intro */
+.intro {
+  display:flex;
+  flex-wrap:wrap;
+  gap:40px;
+  align-items:center;
+}
+.intro img {
+  width:260px;
+  border-radius:14px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
+}
+.intro p {
+  margin-bottom:12px;
+  font-size:17px;
+}
+
+/* Projects */
+.projects {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+.project-card {
+  background:#142550;
+  padding:20px;
+  border-radius:14px;
+  transition:0.4s;
+}
+.project-card:hover {
+  transform:translateY(-8px);
+}
+.project-card img {
+  width:100%;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+
+/* Skills */
+.skills {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.skill {
+  background:#1b2a5a;
+  padding:8px 14px;
+  border-radius:6px;
+  font-weight:500;
+}
+
+/* Achievements */
+.achievement {
+  background:#1b2a5a;
+  padding:14px;
+  border-radius:8px;
+  margin-bottom:10px;
+}
+
+footer {
+  text-align:center;
+  padding:30px;
+  background:#081530;
+  margin-top:50px;
+}
+
+a { color:#fff; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Dariya Tologonova</h1>
+  <nav>
+    <button onclick="switchLanguage()">RU / EN</button>
+  </nav>
+</header>
+
+<!-- ABOUT -->
+<section class="active">
+  <div class="intro">
+    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1" alt="Portrait">
+    <div>
+      <h2 id="intro-title"></h2>
+      <p class="intro-text"></p>
+      <p class="intro-text"></p>
+      <p class="intro-text"></p>
+      <p class="intro-text"></p>
+      <p class="intro-text"></p>
+      <p><b>Instagram:</b> <a href="https://instagram.com/_9898fml" target="_blank">@_9898fml</a></p>
+      <p><b>Phone:</b> +996 345 12 34 00</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+  <h2 id="projects-title"></h2>
+  <div class="projects">
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
+      <h3 class="project-title"></h3>
+      <p class="project-text"></p>
+    </div>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+      <h3 class="project-title"></h3>
+      <p class="project-text"></p>
+    </div>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1581091215367-59ab6c50f9f5">
+      <h3 class="project-title"></h3>
+      <p class="project-text"></p>
+    </div>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+      <h3 class="project-title"></h3>
+      <p class="project-text"></p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section>
+  <h2 id="skills-title"></h2>
+  <div class="skills"></div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section>
+  <h2 id="ach-title"></h2>
+  <div class="achievements"></div>
+</section>
+
+<footer>
+  © 2026 Dariya Tologonova
+</footer>
+
+<script>
+// scroll animation
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+  sections.forEach(s=>{
+    if(s.getBoundingClientRect().top < window.innerHeight-100){
+      s.classList.add("active");
+    }
+  })
+});
+
+let lang = "en";
+
+const content = {
+  en:{
+    introTitle:"Hello, I'm Dariya",
+    intro:[
+      "I am 16 years old and a graduate of the UWC program.",
+      "I studied at the Kyrgyz-Turkish Lyceum «UMUT».",
+      "Founder of a youth clothing brand inspired by fashion culture.",
+      "Organizer of a school photo exhibition about Kyrgyzstan’s nature.",
+      "Fashion & cinema blogger with an engaged audience."
+    ],
+    projectsTitle:"Projects",
+    projects:[
+      ["Youth Clothing Brand","Created a fashion brand, managed design, branding and photoshoots."],
+      ["Photography Exhibition","Curated a nature exhibition highlighting Kyrgyz landscapes."],
+      ["Rocket Modeling","STEM projects involving design and launch of model rockets."],
+      ["Fashion & Cinema Blog","Visual storytelling about fashion trends and films."]
+    ],
+    skillsTitle:"Skills",
+    skills:["Fashion Design","Photography","Branding","Content Creation","Creative Direction","STEM"],
+    achTitle:"Achievements",
+    ach:[
+      "UWC Program Graduate",
+      "Founder of Fashion Brand",
+      "Exhibition Organizer",
+      "STEM Project Participant"
+    ]
+  },
+  ru:{
+    introTitle:"Привет, я Дария",
+    intro:[
+      "Мне 16 лет, я выпускница программы UWC.",
+      "Училась в Кыргызско-Турецком лицее «УМУТ».",
+      "Основательница бренда одежды для молодежи.",
+      "Организатор школьной фотовыставки о природе Кыргызстана.",
+      "Веду блог о моде и кино."
+    ],
+    projectsTitle:"Проекты",
+    projects:[
+      ["Бренд одежды","Создание бренда, дизайн, брендинг и фотосъёмки."],
+      ["Фотовыставка","Кураторская выставка природы Кыргызстана."],
+      ["Ракетомоделирование","STEM-проекты и запуск моделей ракет."],
+      ["Блог о моде и кино","Визуальный контент и культурные обзоры."]
+    ],
+    skillsTitle:"Навыки",
+    skills:["Дизайн одежды","Фотография","Брендинг","Контент","Креатив","STEM"],
+    achTitle:"Достижения",
+    ach:[
+      "Выпускница UWC",
+      "Основательница бренда",
+      "Организатор выставки",
+      "Участница STEM-проектов"
+    ]
+  }
+};
+
+function applyLang(){
+  const c = content[lang];
+  document.getElementById("intro-title").textContent = c.introTitle;
+  document.querySelectorAll(".intro-text").forEach((p,i)=>p.textContent=c.intro[i]);
+  document.getElementById("projects-title").textContent=c.projectsTitle;
+  document.querySelectorAll(".project-card").forEach((card,i)=>{
+    card.querySelector(".project-title").textContent=c.projects[i][0];
+    card.querySelector(".project-text").textContent=c.projects[i][1];
+  });
+  document.getElementById("skills-title").textContent=c.skillsTitle;
+  document.querySelector(".skills").innerHTML=c.skills.map(s=>`<div class="skill">${s}</div>`).join("");
+  document.getElementById("ach-title").textContent=c.achTitle;
+  document.querySelector(".achievements").innerHTML=c.ach.map(a=>`<div class="achievement">${a}</div>`).join("");
+}
+
+function switchLanguage(){
+  lang = lang==="en" ? "ru" : "en";
+  applyLang();
+}
+
+applyLang();
+</script>
+
+</body>
+</html>
+
