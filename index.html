@@ -15,8 +15,8 @@
 <p class="p1">&lt;!DOCTYPE html&gt;</p>
 <p class="p1">&lt;html lang="ru"&gt;</p>
 <p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
 <p class="p1">&lt;title&gt;Dariya Tologonova — Portfolio&lt;/title&gt;</p>
 <p class="p2"><br></p>
 <p class="p1">&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"&gt;</p>
@@ -24,6 +24,7 @@
 <p class="p1">&lt;style&gt;</p>
 <p class="p1">:root{</p>
 <p class="p1"><span class="Apple-converted-space">  </span>--bg:#06162b;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>--card:#0b2347;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>--blue:#3fa9f5;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>--white:#ffffff;</p>
 <p class="p1">}</p>
@@ -39,190 +40,233 @@
 <p class="p1">header{</p>
 <p class="p1"><span class="Apple-converted-space">  </span>display:flex;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>justify-content:space-between;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:24px 40px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items:center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding:20px 40px;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>border-bottom:1px solid rgba(255,255,255,.1);</p>
 <p class="p1">}</p>
 <p class="p2"><br></p>
-<p class="p1">nav button{</p>
+<p class="p1">nav button, .lang button{</p>
 <p class="p1"><span class="Apple-converted-space">  </span>background:none;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>border:none;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:var(--white);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin-left:20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-size:14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color:white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-left:15px;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>cursor:pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size:14px;</p>
 <p class="p1">}</p>
 <p class="p2"><br></p>
-<p class="p1">nav button:hover{color:var(--blue)}</p>
-<p class="p2"><br></p>
-<p class="p1">.lang button{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border:1px solid var(--blue);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:6px 10px;</p>
-<p class="p1">}</p>
+<p class="p1">nav button:hover, .lang button:hover{color:var(--blue)}</p>
 <p class="p2"><br></p>
 <p class="p1">section{</p>
 <p class="p1"><span class="Apple-converted-space">  </span>display:none;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>padding:60px 8vw;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>animation:fadeUp .8s ease;</p>
 <p class="p1">}</p>
 <p class="p2"><br></p>
 <p class="p1">section.active{display:block}</p>
 <p class="p2"><br></p>
-<p class="p1">h1{</p>
+<p class="p1">@keyframes fadeUp{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>from{opacity:0;transform:translateY(30px)}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>to{opacity:1;transform:translateY(0)}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">h1,h2{</p>
 <p class="p1"><span class="Apple-converted-space">  </span>font-family:Playfair Display, serif;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-size:48px;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:20px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.main-photo{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width:320px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:25px;</p>
 <p class="p1">}</p>
 <p class="p2"><br></p>
 <p class="p1">.cards{</p>
 <p class="p1"><span class="Apple-converted-space">  </span>display:grid;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>grid-template-columns:repeat(auto-fit,minmax(260px,1fr));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>grid-template-columns:repeat(auto-fit,minmax(300px,1fr));</p>
 <p class="p1"><span class="Apple-converted-space">  </span>gap:30px;</p>
 <p class="p1">}</p>
 <p class="p2"><br></p>
 <p class="p1">.card{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:#0b2347;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background:var(--card);</p>
 <p class="p1"><span class="Apple-converted-space">  </span>padding:20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius:12px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>cursor:pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:16px;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>transition:.3s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor:pointer;</p>
 <p class="p1">}</p>
 <p class="p2"><br></p>
-<p class="p1">.card:hover{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transform:scale(1.05);</p>
-<p class="p1">}</p>
+<p class="p1">.card:hover{transform:scale(1.05)}</p>
 <p class="p2"><br></p>
 <p class="p1">.card img{</p>
 <p class="p1"><span class="Apple-converted-space">  </span>width:100%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius:8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:12px;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:12px;</p>
 <p class="p1">}</p>
 <p class="p2"><br></p>
-<p class="p1">.gallery{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display:grid;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>grid-template-columns:repeat(auto-fit,minmax(250px,1fr));</p>
-<p class="p1"><span class="Apple-converted-space">  </span>gap:20px;</p>
+<p class="p1">#project-text{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:30px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>line-height:1.6;</p>
 <p class="p1">}</p>
 <p class="p2"><br></p>
-<p class="p1">.gallery img{</p>
+<p class="p1">#gallery img{</p>
 <p class="p1"><span class="Apple-converted-space">  </span>width:100%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius:12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius:16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom:20px;</p>
 <p class="p1">}</p>
 <p class="p2"><br></p>
-<p class="p1">.decor-line{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>height:1px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:linear-gradient(90deg,transparent,var(--blue),transparent);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin:40px 0;</p>
-<p class="p1">}</p>
+<p class="p1">a{color:var(--blue)}</p>
 <p class="p1">&lt;/style&gt;</p>
 <p class="p1">&lt;/head&gt;</p>
 <p class="p2"><br></p>
 <p class="p1">&lt;body&gt;</p>
 <p class="p2"><br></p>
 <p class="p1">&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div&gt;&lt;strong&gt;Dariya Tologonova&lt;/strong&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;strong&gt;Dariya Tologonova&lt;/strong&gt;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;nav&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="show('home')"&gt;Home&lt;/button&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="show('achievements')"&gt;Achievements&lt;/button&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="show('projects')"&gt;Projects&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="show('contacts')"&gt;Contacts&lt;/button&gt;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="lang"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="setLang('ru')"&gt;RU&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="setLang('en')"&gt;EN&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button&gt;RU&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button&gt;EN&lt;/button&gt;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
 <p class="p1">&lt;/header&gt;</p>
 <p class="p2"><br></p>
 <p class="p1">&lt;!-- HOME --&gt;</p>
 <p class="p1">&lt;section id="home" class="active"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;img src="images/home.jpg" style="max-width:380px;border-radius:20px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1 data-ru="Тологонова Дария" data-en="Dariya Tologonova"&gt;&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p data-ru="Мне 16 лет. Я амбициозная, инициативная, креативная, ответственная, с международным мышлением и лидерскими навыками."</p>
-<p class="p1"><span class="Apple-converted-space">     </span>data-en="I am 16 years old. Ambitious, proactive, creative, responsible, with international mindset and leadership skills."&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;img class="main-photo" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="portrait"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Тологонова Дария&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>Мне 16 лет. Я амбициозная, инициативная, креативная и ответственная.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>Обладаю лидерскими качествами, международным мышлением и стремлением к развитию.</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/p&gt;</p>
 <p class="p1">&lt;/section&gt;</p>
 <p class="p2"><br></p>
 <p class="p1">&lt;!-- ACHIEVEMENTS --&gt;</p>
 <p class="p1">&lt;section id="achievements"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Achievements&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Achievements&lt;/h2&gt;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cards"&gt;</p>
+<p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" onclick="window.open('https://www.instagram.com/tokmok_umut')"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="images/achievements/umut.jpg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Турецко-Кыргызский лицей «Умут»&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/School_building.jpg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Прошла обучение и окончила Турецко-Кыргызский лицей «Умут».</p>
+<p class="p1"><span class="Apple-converted-space">        </span>В период обучения активно развивала академические и личностные компетенции,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>стремилась к высоким учебным результатам и соблюдению школьных ценностей.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" onclick="window.open('https://www.instagram.com/uwc.kg')"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="images/achievements/uwc.png"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;United World Colleges (UWC)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/UWC_logo.png"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>В 11 классе я прошла по программе UWC (United World Colleges). UWC — это международное образовательное движение, которое стремится сделать образование силой, объединяющей людей, нации и культуры во имя мира и устойчивого будущего. Эта программа объединяет школы и колледжи по всему миру, где студенты из разных стран обучаются вместе, развивая лидерские качества, критическое мышление, уважение к разнообразию и готовность создавать позитивные изменения в обществе.</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>Программа UWC предлагает углублённое обучение в рамках Международного бакалавриата (International Baccalaureate Diploma Programme — IBDP) — одной из самых признанных предуниверситетских программ, которая помогает студентам стать самостоятельными, ответственными и готовыми к поступлению в университеты по всему миру.</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>Чтобы пройти по этой программе, я участвовала в конкурсном отборе через национальный комитет UWC в своей стране. В процессе отбора я подготовила и подала заявку, прошла собеседования и доказала свою мотивацию к развитию, участию в международном сообществе и стремлению к учебным и личностным целям. Это позволило мне быть принятой в рамках программы и получить возможность пройти часть обучения по международному образовательному стандарту.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
 <p class="p1">&lt;/section&gt;</p>
 <p class="p2"><br></p>
 <p class="p1">&lt;!-- PROJECTS --&gt;</p>
 <p class="p1">&lt;section id="projects"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Projects&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Projects&lt;/h2&gt;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cards"&gt;</p>
+<p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" onclick="openProject('fashion')"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="images/fashion/cover.jpg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Fashion Blog&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://images.unsplash.com/photo-1521334884684-d80222895322"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Я вела фэшн-блог, посвящённый анализу и обзорам модных образов.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>В рамках блога я делала разборы повседневных и сценических образов селебрити,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>анализировала коллекции и стилистику известных модных домов,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>а также делилась собственным взглядом на современные модные тенденции.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Работа над блогом помогла мне развить визуальный вкус, аналитическое мышление,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>навыки самопрезентации и понимание индустрии моды.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" onclick="openProject('brand')"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="images/brand/cover.jpg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Clothing Brand&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://images.unsplash.com/photo-1483985988355-763728e1935b"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Я открыла онлайн-магазин одежды для подростков в Бишкеке с целью разнообразить стиль</p>
+<p class="p1"><span class="Apple-converted-space">        </span>и расширить выбор модной одежды в Кыргызстане.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Идея проекта возникла из личного опыта: в Бишкеке было сложно найти одежду,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>соответствующую моему вкусу и современным подростковым трендам.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>В рамках проекта я самостоятельно формировала ассортимент, занималась продвижением</p>
+<p class="p1"><span class="Apple-converted-space">        </span>и работой с клиентами. Этот опыт помог мне развить предпринимательское мышление,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>креативность и понимание потребностей подростковой аудитории.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" onclick="openProject('band')"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="images/band/cover.jpg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Band Crew&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Я была основателем и руководителем танцевальной команды Band Crew.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Мы регулярно выступали на школьных мероприятиях и участвовали в мероприятиях за пределами школы,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>например, Модель ООН.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Я занималась организацией репетиций, постановкой номеров и координацией участников.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Этот опыт помог мне развить лидерские качества, ответственность,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>умение работать в команде и навыки публичных выступлений.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" onclick="openProject('rocket')"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="images/rocket/cover.jpg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Umut Rocketry Team&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Я являлась участником школьной команды по ракетомоделированию Umut Rocketry Team.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>В рамках командной работы я отвечала за подготовку и установку запала,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>а также за разработку дизайна командной формы.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Проект позволил мне развить техническое мышление, внимание к деталям,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ответственность и навыки междисциплинарной работы.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" onclick="openProject('photo')"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="images/photo/cover.jpg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Photo Exhibition&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Я организовала школьную фотовыставку, посвящённую природе Кыргызстана,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>с целью показать красоту родной страны и повысить интерес учащихся</p>
+<p class="p1"><span class="Apple-converted-space">        </span>к окружающей среде и культурному наследию.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Я занималась отбором работ, оформлением экспозиции и организацией мероприятия.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Проект способствовал развитию эстетического восприятия,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>экологического сознания и чувства гордости за природное богатство страны.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
 <p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
 <p class="p1">&lt;/section&gt;</p>
 <p class="p2"><br></p>
 <p class="p1">&lt;!-- PROJECT VIEW --&gt;</p>
 <p class="p1">&lt;section id="project-view"&gt;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="show('projects')"&gt;← Back&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="decor-line"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="project-content"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="project-text"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="gallery"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- CONTACTS --&gt;</p>
+<p class="p1">&lt;section id="contacts"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;Contacts&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;📧 &lt;a href="mailto:didi9800@gmail.com"&gt;didi9800@gmail.com&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;📞 &lt;a href="tel:+996777889900"&gt;+996 777 88 99 00&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;📸 &lt;a href="https://instagram.com/_9898fml" target="_blank"&gt;@_9898fml&lt;/a&gt;&lt;/p&gt;</p>
 <p class="p1">&lt;/section&gt;</p>
 <p class="p2"><br></p>
 <p class="p1">&lt;script&gt;</p>
-<p class="p1">let lang='ru';</p>
-<p class="p2"><br></p>
-<p class="p1">function setLang(l){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>lang=l;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('[data-ru]').forEach(el=&gt;{</p>
-<p class="p1"><span class="Apple-converted-space">    </span>el.textContent=el.dataset[l];</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
 <p class="p1">function show(id){</p>
 <p class="p1"><span class="Apple-converted-space">  </span>document.querySelectorAll('section').forEach(s=&gt;s.classList.remove('active'));</p>
 <p class="p1"><span class="Apple-converted-space">  </span>document.getElementById(id).classList.add('active');</p>
 <p class="p1">}</p>
 <p class="p2"><br></p>
 <p class="p1">function openProject(name){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const box=document.getElementById('project-content');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>box.innerHTML='';</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const images={</p>
-<p class="p1"><span class="Apple-converted-space">    </span>fashion:4,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>brand:3,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>band:1,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>rocket:1,</p>
-<p class="p1"><span class="Apple-converted-space">    </span>photo:9</p>
-<p class="p1"><span class="Apple-converted-space">  </span>};</p>
-<p class="p1"><span class="Apple-converted-space">  </span>for(let i=1;i&lt;=images[name];i++){</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const img=document.createElement('img');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>img.src=`images/${name}/${i}.jpg`;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>img.style.width='100%';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>img.style.marginBottom='20px';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>box.appendChild(img);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const text = document.querySelector(`.card[onclick="openProject('${name}')"] p`).innerHTML;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('project-text').innerHTML = text;</p>
 <p class="p1"><span class="Apple-converted-space">  </span>show('project-view');</p>
 <p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">setLang('ru');</p>
 <p class="p1">&lt;/script&gt;</p>
 <p class="p2"><br></p>
 <p class="p1">&lt;/body&gt;</p>
